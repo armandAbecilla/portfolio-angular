@@ -1,0 +1,53 @@
+<div class="header">
+  <div class="container">
+    <div class="header__nav">
+      <div class="header__logo">
+        <a class="header__site-name">Armand <span>Abecilla</span></a>
+      </div>
+
+      <nav class="header__main-nav">
+        <ul>
+          <ng-container *ngTemplateOutlet="links"></ng-container>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="header__content">
+      <h1 class="cta">Hi. I’m Paul Armand M. Abecilla</h1>
+      <p>Web Designer / Developer</p>
+      <a class="button-cta">View My Portfolio</a>
+    </div>
+  </div>
+
+  <nav class="header__nav-mobile">
+    <div
+      class="header__nav-burger"
+      [ngClass]="{ toggled: isMobileNavOverlayVisible }"
+      (click)="isMobileNavOverlayVisible = !isMobileNavOverlayVisible"
+    >
+      <span class="bar top"></span>
+      <span class="bar middle"></span>
+      <span class="bar bottom"></span>
+    </div>
+  </nav>
+
+  <ul
+    class="header__nav-overlay"
+    [ngClass]="{ active: isMobileNavOverlayVisible }"
+  >
+    <ng-container *ngTemplateOutlet="links"></ng-container>
+  </ul>
+</div>
+
+<!-- templates -->
+<ng-template #links>
+  <li><a href="">About</a></li>
+  <li><a href="">Portfolio</a></li>
+  <li>
+    <a
+      class="contact-me btn-primary"
+      href="mailto:abecilla.paularmand@gmail.com"
+      >Contact Me</a
+    >
+  </li>
+</ng-template>
